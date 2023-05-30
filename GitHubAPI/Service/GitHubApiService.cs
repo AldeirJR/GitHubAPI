@@ -1,4 +1,7 @@
-﻿namespace GitHubAPI.Service
+﻿using GitHubAPI.Model;
+using Newtonsoft.Json;
+
+namespace GitHubAPI.Service
 {
     public class GitHubApiService
     {
@@ -12,25 +15,31 @@
             _httpClient.DefaultRequestHeaders.Add("User-Agent", "Your-App-Name");
             // Add any required authentication headers here
         }
-        public async Task<string> GetUsers(int since)
+        public async Task<List<GitHubUser>> GetUsers(int since)
         {
             var response = await _httpClient.GetAsync($"users?since={since}");
             response.EnsureSuccessStatusCode();
-            return await response.Content.ReadAsStringAsync();
+            var responseBody = await response.Content.ReadAsStringAsync();
+            var users = JsonConvert.DeserializeObject<List<GitHubUser>>(responseBody);
+            return users;
         }
 
-        public async Task<string> GetUserDetails(string username)
+        public async Task<GitHubUserDetails> GetUserDetails(string username)
         {
             var response = await _httpClient.GetAsync($"users/{username}");
             response.EnsureSuccessStatusCode();
-            return await response.Content.ReadAsStringAsync();
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var userDetails = JsonConvert.DeserializeObject<GitHubUserDetails>(responseContent);
+            return userDetails;
         }
 
-        public async Task<string> GetUserRepositories(string username)
+        public async Task<List<GitHubRepository>> GetUserRepositories(string username)
         {
             var response = await _httpClient.GetAsync($"users/{username}/repos");
             response.EnsureSuccessStatusCode();
-            return await response.Content.ReadAsStringAsync();
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var repositories = JsonConvert.DeserializeObject<List<GitHubRepository>>(responseContent);
+            return repositories;
         }
 
 
