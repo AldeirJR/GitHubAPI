@@ -1,27 +1,27 @@
 # GitHubAPI
-The GitHub API Proxy Web API is a service that acts as a proxy for client requests to the GitHub API. It allows clients to interact with various GitHub endpoints through a unified interface provided by the Web API.
+A API da Web do GitHub API Proxy é um serviço que atua como um proxy para solicitações de clientes para a API do GitHub. Ele permite que os clientes interajam com vários endpoints do GitHub por meio de uma interface unificada fornecida pela API da Web.
 
-The main purpose of this project is to simplify the interaction with the GitHub API by providing a convenient and consistent set of endpoints. It abstracts away the complexities of making direct requests to the GitHub API and provides a more straightforward API surface for clients to consume.
+O principal objetivo deste projeto é simplificar a interação com a API do GitHub, fornecendo um conjunto conveniente e consistente de endpoints. Ele abstrai as complexidades de fazer solicitações diretas à API do GitHub e fornece uma superfície de API mais direta para os clientes consumirem.
 
-The Web API offers the following endpoints:
+A API da Web oferece os seguintes pontos de extremidade:
 
 GET - /api/users?since={number}:
 
-Description: Retrieves a list of GitHub users.
-Parameters: since (optional) - Specifies the ID of the user to start the list from.
-Response: Returns a list of GitHub users and a link to the next page.
-GET - /api/users/:username/details:
+Descrição: recupera uma lista de usuários do GitHub.
+Parâmetros: since (opcional) - Especifica o ID do usuário para iniciar a lista.
+Resposta: retorna uma lista de usuários do GitHub e um link para a próxima página.
+GET - /api/users/:nome de usuário/detalhes:
 
-Description: Retrieves the details of a specific GitHub user.
-Parameters: username - Specifies the username of the GitHub user.
-Response: Returns the details of the GitHub user, including their username, bio, followers count, etc.
+Descrição: recupera os detalhes de um usuário específico do GitHub.
+Parâmetros: username - Especifica o nome de usuário do usuário do GitHub.
+Resposta: retorna os detalhes do usuário do GitHub, incluindo nome de usuário, biografia, contagem de seguidores, etc.
 GET - /api/users/:username/repos:
 
-Description: Retrieves a list of repositories owned by a specific GitHub user.
-Parameters: username - Specifies the username of the GitHub user.
-Response: Returns a list of repositories owned by the GitHub user, including details such as repository name, description, stars count, etc.
-The project is implemented using ASP.NET Core, providing a scalable and efficient web application framework. It leverages the HttpClient class to make requests to the GitHub API and then transforms and forwards the responses to the client.
+Descrição: recupera uma lista de repositórios pertencentes a um usuário específico do GitHub.
+Parâmetros: username - Especifica o nome de usuário do usuário do GitHub.
+Resposta: retorna uma lista de repositórios pertencentes ao usuário do GitHub, incluindo detalhes como nome do repositório, descrição, contagem de estrelas, etc.
+O projeto é implementado usando ASP.NET Core, fornecendo uma estrutura de aplicativo da Web escalável e eficiente. Ele aproveita a classe HttpClient para fazer solicitações à API do GitHub e, em seguida, transforma e encaminha as respostas para o cliente.
 
-The project also includes unit tests using the testing framework MSTest. These tests cover all the API endpoints, ensuring their correctness and verifying the expected behavior of the API.
+O projeto também inclui testes de unidade usando a estrutura de teste MSTest. Esses testes abrangem todos os endpoints da API, garantindo sua correção e verificando o comportamento esperado da API.
 
-Overall, the GitHub API Proxy Web API simplifies the integration with the GitHub API by providing a streamlined and standardized interface, allowing clients to retrieve user information and repository data from GitHub in a more convenient and efficient manner.
+No geral, a API da Web do GitHub API Proxy simplifica a integração com a API do GitHub, fornecendo uma interface simplificada e padronizada, permitindo que os clientes recuperem informações do usuário e dados do repositório do GitHub de maneira mais conveniente e eficiente.
