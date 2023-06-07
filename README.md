@@ -1,6 +1,4 @@
 # GitHubAPI
-A API da Web do GitHub API Proxy é um serviço que atua como um proxy para solicitações de clientes para a API do GitHub. Ele permite que os clientes interajam com vários endpoints do GitHub por meio de uma interface unificada fornecida pela API da Web.
-
 O principal objetivo deste projeto é simplificar a interação com a API do GitHub, fornecendo um conjunto conveniente e consistente de endpoints. Ele abstrai as complexidades de fazer solicitações diretas à API do GitHub e fornece uma superfície de API mais direta para os clientes consumirem.
 
 A API da Web oferece os seguintes pontos de extremidade:
